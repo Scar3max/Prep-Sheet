@@ -1,0 +1,4 @@
+
+[tabpfn]
+tabpfn-client
+pandas

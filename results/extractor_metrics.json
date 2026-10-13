@@ -1,0 +1,17 @@
+{
+  "baseline": {
+    "item": "Croissant",
+    "made": 51,
+    "sold": 44,
+    "leftover": 7,
+    "sold_out": false,
+    "sold_out_time": null,
+    "context_tags": [
+      "croissant",
+      "exam week",
+      "diwali"
+    ],
+    "confidence": 0.7
+  },
+  "sample_count": 1200
+}

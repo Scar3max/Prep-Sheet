@@ -1,0 +1,60 @@
+[[items]]
+name = "Croissant"
+price_inr = 45
+cost_inr = 20
+fresh_daily = true
+shelf_life_hours = 12
+[[items]]
+name = "Masala Dosa"
+price_inr = 60
+cost_inr = 26
+fresh_daily = true
+shelf_life_hours = 8
+[[items]]
+name = "Veg Puff"
+price_inr = 40
+cost_inr = 18
+fresh_daily = true
+shelf_life_hours = 10
+[[items]]
+name = "Cold Coffee"
+price_inr = 110
+cost_inr = 35
+fresh_daily = false
+shelf_life_hours = 24
+[[items]]
+name = "Tea"
+price_inr = 25
+cost_inr = 8
+fresh_daily = false
+shelf_life_hours = 18
+[[items]]
+name = "Muffin"
+price_inr = 70
+cost_inr = 28
+fresh_daily = true
+shelf_life_hours = 10
+[[items]]
+name = "Bun Maska"
+price_inr = 35
+cost_inr = 15
+fresh_daily = true
+shelf_life_hours = 12
+[[items]]
+name = "Sandwich"
+price_inr = 90
+cost_inr = 38
+fresh_daily = true
+shelf_life_hours = 6
+[[items]]
+name = "Samosa"
+price_inr = 30
+cost_inr = 12
+fresh_daily = true
+shelf_life_hours = 8
+[[items]]
+name = "Cake Slice"
+price_inr = 120
+cost_inr = 55
+fresh_daily = true
+shelf_life_hours = 24

@@ -1,0 +1,176 @@
+{
+  "data_source": "synthetic",
+  "days": 120,
+  "items": [
+    "Bun Maska",
+    "Cake Slice",
+    "Cold Coffee",
+    "Croissant",
+    "Masala Dosa",
+    "Muffin",
+    "Samosa",
+    "Sandwich",
+    "Tea",
+    "Veg Puff"
+  ],
+  "forecasts": {
+    "Bun Maska": 25.8,
+    "Cake Slice": 21.1,
+    "Cold Coffee": 49.0,
+    "Croissant": 28.4,
+    "Masala Dosa": 22.5,
+    "Muffin": 19.8,
+    "Samosa": 31.4,
+    "Sandwich": 23.3,
+    "Tea": 39.5,
+    "Veg Puff": 32.5
+  },
+  "prep": {
+    "Bun Maska": {
+      "qty": 28,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Cake Slice": {
+      "qty": 23,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Cold Coffee": {
+      "qty": 59,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Croissant": {
+      "qty": 31,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Masala Dosa": {
+      "qty": 25,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Muffin": {
+      "qty": 22,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Samosa": {
+      "qty": 35,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Sandwich": {
+      "qty": 26,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Tea": {
+      "qty": 47,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    },
+    "Veg Puff": {
+      "qty": 35,
+      "reasons": [
+        "recent sales",
+        "weather cues"
+      ]
+    }
+  },
+  "extractor_baseline": {
+    "baseline": {
+      "item": "Croissant",
+      "made": 51,
+      "sold": 44,
+      "leftover": 7,
+      "sold_out": false,
+      "sold_out_time": null,
+      "context_tags": [
+        "croissant",
+        "exam week",
+        "diwali"
+      ],
+      "confidence": 0.7
+    },
+    "sample_count": 1200
+  },
+  "sell_out_evaluation": {
+    "mae": 0.425,
+    "coverage": 262
+  },
+  "ranking": {
+    "Bun Maska": {
+      "forecast": 25.8,
+      "prep": 28
+    },
+    "Cake Slice": {
+      "forecast": 21.1,
+      "prep": 23
+    },
+    "Cold Coffee": {
+      "forecast": 49.0,
+      "prep": 59
+    },
+    "Croissant": {
+      "forecast": 28.4,
+      "prep": 31
+    },
+    "Masala Dosa": {
+      "forecast": 22.5,
+      "prep": 25
+    },
+    "Muffin": {
+      "forecast": 19.8,
+      "prep": 22
+    },
+    "Samosa": {
+      "forecast": 31.4,
+      "prep": 35
+    },
+    "Sandwich": {
+      "forecast": 23.3,
+      "prep": 26
+    },
+    "Tea": {
+      "forecast": 39.5,
+      "prep": 47
+    },
+    "Veg Puff": {
+      "forecast": 32.5,
+      "prep": 35
+    }
+  },
+  "morning_brief": "**Morning Prep Brief**\n\nBased on recent sales and weather cues, here are the target prep numbers for today:\n\n* **Cold Coffee:** 59\n* **Tea:** 47\n* **Samosa:** 35\n* **Veg Puff:** 35\n* **Croissant:** 31\n* **Bun Maska:** 28\n* **Sandwich:** 26\n* **Masala Dosa:** 25\n* **Cake Slice:** 23\n* **Muffin:** 22\n\nLet's get these stations set up and ready for the morning rush.",
+  "providers": {
+    "forecast": {
+      "requested": "tabpfn",
+      "used": "tabpfn",
+      "status": "success"
+    },
+    "brief": {
+      "requested": "gemini",
+      "used": "gemini",
+      "status": "success"
+    }
+  }
+}
