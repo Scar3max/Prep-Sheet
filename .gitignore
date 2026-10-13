@@ -1,0 +1,38 @@
+# Local credentials; keep the example template
+.env
+.env.*
+!.env.example
+
+# Python environments, caches, and bytecode
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Local databases and SQLite journals
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+
+# Generated demo outputs
+**/results/*.json
+**/results/*.csv
+**/results/*.png
+
+# OS metadata
+.DS_Store
+Thumbs.db

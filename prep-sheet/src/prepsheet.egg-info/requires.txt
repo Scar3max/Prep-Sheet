@@ -1,4 +1,0 @@
-
-[tabpfn]
-tabpfn-client
-pandas

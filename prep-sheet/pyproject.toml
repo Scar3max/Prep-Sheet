@@ -6,7 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "prepsheet"
 version = "0.1.0"
 description = "Prep Sheet: cafe demand prep planner with sell-out correction"
-readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "Prep Sheet" }]
 license = { text = "MIT" }

@@ -14,35 +14,23 @@ Prep Sheet is a small-cafe prep planner for a bakery or counter in India. Its sy
 - Provides a demo mode that replays 120 synthetic days and writes results to `results/demo_results.json`.
 - Provides a Telegram bot with per-chat SQLite storage for menu and sales records.
 
-## Repo layout
+## Repository layout
 
 ```text
-prep-sheet/
-  README.md
-  LICENSE
-  .env.example
-  config.example.toml
-  menu.example.toml
+.
   .github/workflows/tests.yml
-  data/
-    raw/
-    cache/
-  src/prepsheet/
-    __init__.py
-    __main__.py
-    ledger.py
-    notes.py
-    extract.py
-    demand.py
-    features.py
-    forecast.py
-    prep.py
-    brief.py
-    bot.py
-    voice.py
-    evaluate.py
-  tests/
-  results/
+  .gitignore
+  LICENSE
+  README.md
+  prep-sheet/
+    .env.example
+    config.example.toml
+    menu.example.toml
+    pyproject.toml
+    src/prepsheet/
+    tests/
+    data/       # local SQLite data; not committed
+    results/    # generated demo outputs; not committed
 ```
 
 ## Quick start
@@ -74,10 +62,11 @@ Or select TabPFN for a single demo run with `python -m prepsheet demo --forecast
 ## Demo mode
 
 ```bash
+cd prep-sheet
 python -m prepsheet demo
 ```
 
-This replays a synthetic 120-day ledger through the pipeline and writes the summary to `results/demo_results.json`. The JSON marks its data source as `synthetic`. If you only add `TABPFN_TOKEN` but leave `FORECAST_PROVIDER=template` (the default), the demo continues to use the local forecast. Select TabPFN with `FORECAST_PROVIDER=tabpfn` or the `--forecast-provider tabpfn` flag to make a hosted TabPFN attempt.
+Run this from the application directory (`prep-sheet/`). It replays a synthetic 120-day ledger through the pipeline and writes the summary to `results/demo_results.json`. The JSON marks its data source as `synthetic`. If you only add `TABPFN_TOKEN` but leave `FORECAST_PROVIDER=template` (the default), the demo continues to use the local forecast. Select TabPFN with `FORECAST_PROVIDER=tabpfn` or the `--forecast-provider tabpfn` flag to make a hosted TabPFN attempt.
 
 ## Telegram bot
 
@@ -95,7 +84,7 @@ Menu entry is one row per line in `Name | selling price | unit cost` format, for
 
 ## Using the hosted providers
 
-Copy `.env.example` to `.env` and put your own credentials in `.env` (never in `.env.example` or source control). Do not share or commit `.env`. The CLI loads `.env` automatically; already-set process environment variables take precedence.
+From `prep-sheet/`, copy `.env.example` to `.env` and put your own credentials in `.env` (never in `.env.example` or source control). Do not share or commit `.env`. The CLI loads `.env` automatically; already-set process environment variables take precedence.
 
 To explicitly run both hosted providers:
 
@@ -105,7 +94,7 @@ python -m prepsheet demo --forecast-provider tabpfn --brief-provider gemini
 
 Hosted calls can use account quota. The TabPFN demo fits one regression model on the generated synthetic ledger's item/context features and synthetic `true_demand` target labels, then predicts the next day for each menu item. This is a demo path, not a trained real-cafe forecasting system. Gemini receives the structured prep summary to produce the brief. The default brief model is `gemini-3.5-flash-lite`, with a retry for transient service/rate-limit errors and failover to `gemini-3.8-flash`. These retries improve resilience but cannot guarantee availability and may use additional quota. If `.env` already has an older `GEMINI_MODEL`, update that line too; values in `.env` override code defaults.
 
-Provider outcomes are printed and saved under `providers` in `results/demo_results.json`:
+Provider outcomes are printed and saved under `providers` in `results/demo_results.json` (relative to `prep-sheet/`):
 
 - `status: "success"` with `used: "tabpfn"` or `used: "gemini"` means the remote call returned a usable result.
 - `status: "fallback"` means the requested provider could not be used; `reason` names the issue without including credentials.
@@ -155,6 +144,7 @@ The Telegram bot uses local long polling and must be running to respond; it is n
 ## Tests
 
 ```bash
+cd prep-sheet
 python -m unittest discover -s tests -v
 ```
 
